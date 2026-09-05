@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#111715" />
+    <meta
+            name="description"
+            content="Ironfield — танковая арена. Управляй танком, сражайся с ботами и переживи как можно больше волн."
+    />
+    <title>IRONFIELD — Танковая арена</title>
+    <link rel="stylesheet" href="src/css/style1.css" />
+    <script src="src/js/engine.js" defer></script>
+    <script src="src/js/game.js" defer></script>
+</head>
+<body>
+<main class="Game" aria-label="Танковая арена Ironfield">
+    <canvas
+            id="arena"
+            class="Arena"
+            tabindex="0"
+            aria-label="Игровое поле. WASD или стрелки: движение и поворот. Мышь: прицел. Клик или пробел: огонь. P: пауза. R: новый бой."
+    >Для игры нужен браузер с поддержкой Canvas и включённый JavaScript.</canvas
+    >
+    <div class="Vignette" aria-hidden="true"></div>
+    <header class="Topbar">
+        <div class="Brand">
+            <span class="Brand__mark" aria-hidden="true">Ⅱ</span>
+            <div>
+                <h1>IRONFIELD<span>®</span></h1>
+                <p>ТАНКОВАЯ АРЕНА</p>
+            </div>
+        </div>
+        <div class="Session">
+            <span class="StatusDot"></span> ПОЛИГОН 07
+            <span class="Session__divider">/</span> ВЫЖИВАНИЕ
+        </div>
+        <div class="Toolbar">
+            <button
+                    class="IconButton"
+                    id="sound-button"
+                    type="button"
+                    aria-label="Включить звук"
+                    aria-pressed="false"
+                    title="Включить звук"
+            >
+                <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        aria-hidden="true"
+                >
+                    <path d="M11 4 5 9H2v6h3l6 5V4Z" />
+                    <path id="sound-symbol" d="m16 9 6 6m0-6-6 6" />
+                </svg>
+            </button>
+            <button
+                    class="IconButton"
+                    id="pause-button"
+                    type="button"
+                    aria-label="Пауза"
+                    title="Пауза — P"
+                    disabled
+            >
+                <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                >
+                    <path d="M8 5v14M16 5v14" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <section class="Scoreboard" aria-label="Статистика боя">
+        <div class="Stat">
+            <span class="Stat__label">ВОЛНА</span><span class="Stat__value" id="wave-value">01</span>
+        </div>
+        <span class="Scoreboard__divider"></span>
+        <div class="Stat">
+          <span class="Stat__label">ПОДБИТО</span
+          ><span class="Stat__value" id="kills-value">00</span>
+        </div>
+        <span class="Scoreboard__divider"></span>
+        <div class="Stat">
+          <span class="Stat__label">СЧЁТ</span
+          ><span class="Stat__value Stat__value--accent" id="score-value">0000</span>
+        </div>
+    </section>
+    <div class="Objective">
+        <span class="Objective__index">01</span>
+        <div>
+            <p>ЗАЧИСТИ СЕКТОР</p>
+            <span id="enemy-value">Противников: 3</span>
+        </div>
+    </div>
+    <div class="Announcement" id="announcement" aria-live="polite"></div>
+    <div class="DamageFlash" id="damage-flash" aria-hidden="true"></div>
+    <div class="Overlay" id="overlay">
+        <section
+                class="Briefing"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="overlay-title"
+                aria-describedby="overlay-description"
+        >
+          <span class="Briefing__eyebrow" id="overlay-eyebrow"
+          ><span class="StatusDot"></span> СИСТЕМЫ ГОТОВЫ</span
+          >
+            <h2 id="overlay-title">СТАЛЬ.<br />СКОРОСТЬ.<br /><em>ТОЧНЫЙ ВЫСТРЕЛ.</em></h2>
+            <p class="Briefing__description" id="overlay-description">
+                Твой танк. Вражеский сектор. Держись в движении, используй укрытия и переживи все атаки.
+            </p>
+            <div class="Briefing__controls" id="briefing-controls">
+                <div>
+              <span class="KeyGroup"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span
+              ><span>Движение</span>
+                </div>
+                <div>
+              <span class="KeyGroup"><kbd>МЫШЬ</kbd></span
+              ><span>Прицел</span>
+                </div>
+                <div>
+              <span class="KeyGroup"><kbd>ЛКМ</kbd><span>/</span><kbd>SPACE</kbd></span
+              ><span>Огонь</span>
+                </div>
+            </div>
+            <button class="PrimaryButton" id="play-button" type="button">
+                <span id="play-label">В БОЙ</span><span aria-hidden="true">↗</span>
+            </button>
+            <button class="TextButton" id="restart-button" type="button" hidden>
+                Начать новый бой
+            </button>
+            <p class="Briefing__hint" id="overlay-hint">или нажми Enter</p>
+        </section>
+        <div class="BriefingSide" aria-hidden="true">
+            <span>ПОЛИГОН</span><strong>07</strong>
+            <p>СЕКТОР СЕВЕР<br />ЗОНА ВЫСАДКИ</p>
+        </div>
+    </div>
+    <footer class="BottomHud">
+        <section class="TankStatus" aria-label="Состояние танка">
+            <div class="TankStatus__top">
+            <span class="TankStatus__name"><span class="StatusDot"></span> ТВОЙ ТАНК</span
+            ><span
+            ><strong id="health-value">100</strong
+            ><span class="TankStatus__max"> / 100</span></span
+            >
+            </div>
+            <div
+                    class="HealthBar"
+                    role="progressbar"
+                    aria-label="Броня танка"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="100"
+                    id="health-bar"
+            >
+                <span id="health-fill"></span>
+            </div>
+            <div class="Weapon">
+                <span id="weapon-label">ОРУДИЕ ГОТОВО</span>
+                <div class="Weapon__track"><span id="reload-fill"></span></div>
+            </div>
+        </section>
+        <div class="ControlsLegend">
+            <span><kbd>W A S D / ↑ ↓ ← →</kbd> движение</span><span><kbd>ЛКМ / SPACE</kbd> огонь</span
+        ><span><kbd>P</kbd> пауза</span><span><kbd>R</kbd> заново</span>
+        </div>
+        <div class="ArenaLabel">
+            <span class="StatusDot StatusDot--orange"></span> ЛОКАЛЬНЫЙ БОЙ <span>01 PLAYER</span>
+        </div>
+    </footer>
+    <div class="TouchControls" id="touch-controls" hidden aria-label="Сенсорное управление">
+        <div class="Dpad">
+            <button type="button" data-control="forward" aria-label="Вперёд">↑</button
+            ><button type="button" data-control="left" aria-label="Поворот влево">←</button
+        ><button type="button" data-control="backward" aria-label="Назад">↓</button
+        ><button type="button" data-control="right" aria-label="Поворот вправо">→</button>
+        </div>
+        <button type="button" class="FireButton" data-control="fire" aria-label="Стрелять">
+            ОГОНЬ
+        </button>
+    </div>
+    <noscript
+    ><p class="NoScript">Включи JavaScript в браузере, чтобы запустить игру.</p></noscript
+    >
+</main>
+</body>
+</html>
