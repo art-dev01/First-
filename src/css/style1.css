@@ -1,0 +1,528 @@
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/poppins-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/poppins-medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/poppins-semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/poppins-bold.ttf") format("truetype");
+}
+
+:root {
+  color-scheme: light;
+  --color-text: #000;
+  --color-muted: #828282;
+  --color-surface: #f1f1f1;
+  --color-white: #fff;
+  --color-accent: #fda300;
+  --container-width: 73.125rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-white);
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 2;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 0.125rem solid var(--color-accent);
+  outline-offset: 0.375rem;
+}
+
+.Container {
+  width: min(calc(100% - 3.75rem), var(--container-width));
+  margin-inline: auto;
+}
+
+.VisuallyHidden,
+.SkipLink:not(:focus) {
+  position: absolute;
+  width: 0.125rem;
+  height: 0.125rem;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.SkipLink:focus {
+  position: fixed;
+  inset: 1rem auto auto 1rem;
+  z-index: 20;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-white);
+}
+
+.Header {
+  padding-top: 2.875rem;
+  background: var(--color-surface);
+}
+
+.Header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 2.25rem;
+}
+
+.Logo {
+  display: inline-flex;
+  align-items: baseline;
+  flex-shrink: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.Logo__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.25rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.Navigation__list {
+  display: flex;
+  align-items: center;
+  gap: 3.125rem;
+}
+
+.Navigation__link {
+  display: inline-block;
+  padding-block: 0.25rem;
+  font-weight: 500;
+}
+
+.Navigation__link--home {
+  color: #606060;
+}
+
+.MenuToggle,
+.MobileMenu {
+  display: none;
+}
+
+.Hero {
+  padding-top: 4.75rem;
+  background: var(--color-surface);
+}
+
+.Hero__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.875rem;
+}
+
+.Hero__content {
+  flex: 0 1 31.25rem;
+  min-width: 0;
+  padding-top: 7.75rem;
+}
+
+.Hero__title {
+  margin-bottom: 1.25rem;
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.Hero__role {
+  display: block;
+}
+
+.Hero__image {
+  flex-shrink: 0;
+  align-self: flex-end;
+  width: 30.875rem;
+}
+
+.Services {
+  padding-block: 5.625rem;
+}
+
+.Services__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.875rem;
+}
+
+.ServiceCard__icon {
+  width: 4.25rem;
+  height: 4.25rem;
+  margin-bottom: 1.875rem;
+}
+
+.ServiceCard__title {
+  margin-bottom: 0.625rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.Portfolio {
+  padding-block: 5.625rem;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.SectionTitle {
+  font-size: 2.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.Portfolio__title {
+  margin-bottom: 4.375rem;
+}
+
+.Portfolio__list {
+  display: grid;
+  gap: 5.625rem;
+  max-width: 58.125rem;
+  margin-inline: auto;
+}
+
+.ProjectCard__preview {
+  display: block;
+}
+
+.ProjectCard__image {
+  width: 100%;
+}
+
+.ProjectCard__title {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ProjectCard__title a {
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+}
+
+.Contacts {
+  padding-block: 5.625rem;
+  text-align: center;
+}
+
+.Contacts__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Contacts__description {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.ContactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.625rem;
+  margin-top: 2.5rem;
+  padding: 0.375rem 1.375rem;
+  border-radius: 2rem;
+  color: var(--color-white);
+  background: #070707;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease;
+}
+
+.Socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 21.375rem);
+  margin-top: 5rem;
+}
+
+.Socials__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.Socials__link img {
+  width: 2.625rem;
+  height: 2.625rem;
+}
+
+.Contacts__note {
+  margin-top: 2.5rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+@media (hover: hover) {
+  .Navigation__link:hover,
+  .ProjectCard__title a:hover {
+    color: #606060;
+  }
+
+  .ContactButton:hover {
+    background: #333;
+    transform: translateY(-0.125rem);
+  }
+
+  .Socials__link:hover {
+    opacity: 0.65;
+    transform: translateY(-0.25rem);
+  }
+}
+
+@media (max-width: 64rem) {
+  .Navigation__list {
+    gap: 2rem;
+  }
+
+  .Hero__content {
+    padding-top: 3.75rem;
+  }
+
+  .Hero__title {
+    font-size: 2.25rem;
+  }
+
+  .Hero__image {
+    width: 44%;
+  }
+}
+
+@media (max-width: 48rem) {
+  .Header__inner {
+    position: relative;
+  }
+
+  .Navigation {
+    display: none;
+  }
+
+  .MenuToggle {
+    position: absolute;
+    inset: -0.25rem -0.25rem auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .MenuToggle__lines {
+    width: 2.125rem;
+    height: 0.25rem;
+    background: currentColor;
+    box-shadow:
+      0 -0.625rem currentColor,
+      0 0.625rem currentColor;
+  }
+
+  .MobileMenu:target {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: block;
+    padding: 2.5rem 1.875rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--color-white);
+  }
+
+  body:has(.MobileMenu:target) {
+    overflow: hidden;
+  }
+
+  .MobileMenu__close {
+    position: absolute;
+    inset: 2.5rem 1.625rem auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    color: var(--color-muted);
+  }
+
+  .MobileMenu__close span,
+  .MobileMenu__close span::after {
+    width: 2rem;
+    height: 0.25rem;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+
+  .MobileMenu__close span::after {
+    display: block;
+    content: "";
+    transform: rotate(90deg);
+  }
+
+  .MobileMenu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding-right: 3rem;
+  }
+
+  .MobileMenu__link {
+    color: var(--color-muted);
+    font-size: 2.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .MobileMenu__link--home {
+    color: var(--color-text);
+  }
+
+  .Hero {
+    padding-top: 2.75rem;
+  }
+
+  .Hero__inner {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .Hero__content {
+    flex: auto;
+    width: 100%;
+    max-width: 31.25rem;
+    padding-top: 0;
+  }
+
+  .Hero__title {
+    font-size: 2.125rem;
+  }
+
+  .Hero__role {
+    font-size: 1.75rem;
+  }
+
+  .Hero__image {
+    align-self: center;
+    width: 18.5rem;
+  }
+
+  .Services,
+  .Portfolio,
+  .Contacts {
+    padding-block: 3.75rem;
+  }
+
+  .Services__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3.75rem;
+  }
+
+  .Portfolio__title {
+    margin-bottom: 3.125rem;
+  }
+
+  .Portfolio__list {
+    gap: 3.5rem;
+  }
+
+  .ProjectCard__title {
+    margin-top: 1.875rem;
+  }
+
+  .Contacts__description,
+  .ContactButton {
+    margin-top: 1.25rem;
+  }
+
+  .Socials {
+    margin-top: 4.375rem;
+  }
+
+  .Contacts__note {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ContactButton,
+  .Socials__link {
+    transition: none;
+  }
+}

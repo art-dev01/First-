@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kelvin Kramer — designer and developer. Selected design projects, services, and contacts."
+    />
+    <title>Kelvin Kramer — Designer &amp; Developer</title>
+    <link rel="stylesheet" href="src/css/style1.css" />
+  </head>
+  <body>
+    <a class="SkipLink" href="#main">Skip to content</a>
+
+    <header class="Header" id="home">
+      <div class="Container Header__inner">
+        <a class="Logo" href="#home" aria-label="Kelvin — home">
+          Kelvin<span class="Logo__dot" aria-hidden="true"></span>
+        </a>
+
+        <nav class="Navigation" aria-label="Main navigation">
+          <ul class="Navigation__list">
+            <li><a class="Navigation__link Navigation__link--home" href="#home">Home</a></li>
+            <li><a class="Navigation__link" href="#works">Works</a></li>
+            <li><a class="Navigation__link" href="#services">Services</a></li>
+            <li><a class="Navigation__link" href="#about">About</a></li>
+            <li><a class="Navigation__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a
+          class="MenuToggle"
+          href="#mobile-menu"
+          aria-label="Open navigation menu"
+          aria-controls="mobile-menu"
+        >
+          <span class="MenuToggle__lines" aria-hidden="true"></span>
+        </a>
+      </div>
+    </header>
+
+    <nav class="MobileMenu" id="mobile-menu" aria-label="Mobile navigation" tabindex="-1">
+      <a class="MobileMenu__close" href="#home" aria-label="Close navigation menu">
+        <span aria-hidden="true"></span>
+      </a>
+      <ul class="MobileMenu__list">
+        <li><a class="MobileMenu__link MobileMenu__link--home" href="#home">Home</a></li>
+        <li><a class="MobileMenu__link" href="#works">Works</a></li>
+        <li><a class="MobileMenu__link" href="#services">Services</a></li>
+        <li><a class="MobileMenu__link" href="#about">About</a></li>
+        <li><a class="MobileMenu__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <section class="Hero" aria-labelledby="hero-title">
+        <div class="Container Hero__inner">
+          <div class="Hero__content" id="about">
+            <h1 class="Hero__title" id="hero-title">
+              Kelvin Kramer
+              <span class="Hero__role">Designer &amp; Developer</span>
+            </h1>
+            <p class="Hero__description">
+              I’m a portrait, fashion and lifestyle photographer living In New York City. During my
+              thirteen year tenure here.
+            </p>
+          </div>
+          <img
+            class="Hero__image"
+            src="src/img/1-image.png"
+            alt="Kelvin Kramer in a white T-shirt, looking thoughtfully upwards"
+            width="1303"
+            height="1614"
+            fetchpriority="high"
+          />
+        </div>
+      </section>
+
+      <section class="Services" id="services" aria-labelledby="services-title">
+        <div class="Container">
+          <h2 class="VisuallyHidden" id="services-title">Services</h2>
+          <ul class="Services__list">
+            <li class="ServiceCard">
+              <img
+                class="ServiceCard__icon"
+                src="src/icons/graphic%201.svg"
+                alt=""
+                width="68"
+                height="68"
+              />
+              <h3 class="ServiceCard__title">UI/UX Design</h3>
+              <p class="ServiceCard__description">
+                Our design is translated into comprehensive digital environments built on latest
+                development standards.
+              </p>
+            </li>
+            <li class="ServiceCard">
+              <img
+                class="ServiceCard__icon"
+                src="src/icons/startup%201.svg"
+                alt=""
+                width="68"
+                height="68"
+              />
+              <h3 class="ServiceCard__title">Development</h3>
+              <p class="ServiceCard__description">
+                Our design is translated into comprehensive digital environments built on latest
+                development standards.
+              </p>
+            </li>
+            <li class="ServiceCard">
+              <img
+                class="ServiceCard__icon"
+                src="src/icons/browser%201.svg"
+                alt=""
+                width="68"
+                height="68"
+              />
+              <h3 class="ServiceCard__title">Software Testing</h3>
+              <p class="ServiceCard__description">
+                Our design is translated into comprehensive digital environments built on latest
+                development standards.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="Portfolio" id="works" aria-labelledby="portfolio-title">
+        <div class="Container">
+          <h2 class="SectionTitle Portfolio__title" id="portfolio-title">Portfolio</h2>
+          <div class="Portfolio__list">
+            <article class="ProjectCard">
+              <a
+                class="ProjectCard__preview"
+                href="src/img/woman.svg"
+                aria-label="View the Online fashion store homepage design"
+              >
+                <img
+                  class="ProjectCard__image"
+                  src="src/img/woman.svg"
+                  alt="Fashion store homepage with a black-and-white layout and a model wearing a denim jacket"
+                  width="930"
+                  height="500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <h3 class="ProjectCard__title">
+                <a href="src/img/woman.svg">Online fashion store - Homepage</a>
+              </h3>
+            </article>
+            <article class="ProjectCard">
+              <a
+                class="ProjectCard__preview"
+                href="src/img/reebok.svg"
+                aria-label="View the Reebok Store concept design"
+              >
+                <img
+                  class="ProjectCard__image"
+                  src="src/img/reebok.svg"
+                  alt="Reebok store concept with an athlete, blue typography, and red accents"
+                  width="930"
+                  height="500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <h3 class="ProjectCard__title">
+                <a href="src/img/reebok.svg">Reebok Store - Concept</a>
+              </h3>
+            </article>
+            <article class="ProjectCard">
+              <a
+                class="ProjectCard__preview"
+                href="src/img/braun.svg"
+                aria-label="View the Braun landing page concept design"
+              >
+                <img
+                  class="ProjectCard__image"
+                  src="src/img/braun.svg"
+                  alt="Minimal Braun landing page featuring a vintage portable movie camera"
+                  width="930"
+                  height="500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <h3 class="ProjectCard__title">
+                <a href="src/img/braun.svg">Braun Landing Page - Concept</a>
+              </h3>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="Contacts" id="contact" aria-labelledby="contacts-title">
+      <div class="Container Contacts__inner">
+        <h2 class="SectionTitle" id="contacts-title">Contacts</h2>
+        <p class="Contacts__description">
+          Want to know more or just chat?<br />
+          You are welcome!
+        </p>
+        <!-- Add the portfolio owner's email address after mailto:. -->
+        <a class="ContactButton" href="mailto:?subject=Portfolio%20enquiry">Send message</a>
+        <!-- Replace these platform URLs with the owner's profile URLs. -->
+        <ul class="Socials" aria-label="Social networks">
+          <li>
+            <a class="Socials__link" href="https://www.linkedin.com/" aria-label="LinkedIn"
+              ><img src="src/icons/linkedin.svg" alt="" width="42" height="42" loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a class="Socials__link" href="https://www.instagram.com/" aria-label="Instagram"
+              ><img src="src/icons/instagram.svg" alt="" width="42" height="42" loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a class="Socials__link" href="https://www.behance.net/" aria-label="Behance"
+              ><img src="src/icons/behance.svg" alt="" width="42" height="42" loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a class="Socials__link" href="https://dribbble.com/" aria-label="Dribbble"
+              ><img src="src/icons/dribbble.svg" alt="" width="42" height="42" loading="lazy"
+            /></a>
+          </li>
+        </ul>
+        <p class="Contacts__note">
+          Like me on<br />
+          LinkedIn, Instagram, Behance, Dribble
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
