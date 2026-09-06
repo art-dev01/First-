@@ -3,90 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/style1.css">
-    <title>First</title>
+    <link rel="stylesheet" href="./src/css/style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+    <title>Document</title>
 </head>
 <body>
-    <div class="background__container">
-    <header class="header__container">
-            <div class="logo>">
-                <div class="kelvin">Kelvin
-                <span class="ellipse"></span>
+    <div class="home">
+        <div class="home__inner container">
+            
+            <header id="header" class="home__header">
+                <div class="header-logo">
+                    <div class="home__logo">Kelvin
+                        <span class="home__logo-ellipse"></span>
+                    </div>
+                </div>
+                <nav class="header__navigation">
+                        <a class="header__nav-item" href="#header">Home</a>
+                        <a class="header__nav-item" href="#works">Works</a>
+                        <a class="header__nav-item" href="#services">Services</a>
+                        <a class="header__nav-item" href="#header">About</a>
+                        <a class="header__nav-item" href="#contact">Contact</a>
+                </nav>
+            </header>
+            <div class="hero__content">
+                <div class="hero__desc">
+                    <h1 class="hero__name">Kelvin Kramer<br>
+                    Designer & Developer</h1>
+                    <p class="hero__description">I’m a portrait, fashion and lifestyle
+                    photographer living In New York City.<br>
+                    During my thirteen year tenure here.</p>
+                </div>
+                <div class="hero__image-wrapper">
+                    <img src="./src/img/hero.png" alt="hero__image" class="hero__image">
                 </div>
             </div>
-    <nav class="navigation__list ">
-        <a href="#">Home</a>
-        <a href="#">Works</a>
-        <a href="#">Services</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-     </nav>
-    </header>
-    <main>
-        <div class="hero__container">
-            <img src="src/img/1-image.png" alt="hero" class="hero-img">
-            <h1>Kelvin Kramer<br> 
-                Designer & Developer</h1>
-            <p class="discription">I’m a portrait, fashion and lifestyle 
-                photographer living In New York City.<br> 
-                During my thirteen year tenure here.</p>
         </div>
-    </main>
     </div>
-   <!--  <div>
-        <main>
-            <section class="icons">
-                <img src="src/icons/graphic 1.svg" alt="graphic">
-                <img src="src/icons/startup 1.svg" alt="startup">
-                <img src="src/icons/browser 1.svg" alt="browser">
-                <div>
-                    <ul class="disc">
-                        <li>UI/UX DESIGN</li>
-                        <li>DEVELOPMENT</li>
-                        <li>SOFTWARE TESTING</li>
-                    </ul>
+    <div class="services" id="services">
+        <div class="services__inner container">
+            <div class="services__list">
+                <div class="services__item">
+                    <img src="./src/icons/service-image-1.png" alt="services__image" class="services__image">
+                    <h2 class="services__title">UI/UX Design</h2>
+                    <span class="services__desc">Our design is translated into comprehensive digital 
+                    environments built on latest development standards.</span>
                 </div>
-                 <div>
-                    <ul class="about">
-                    <li>Our design is translated into comprehensive digital 
-                        environments built on latest development <br>standards.</li>
-                    <li>Our design is translated into comprehensive digital 
-                        environments built on latest development <br>standards.</li>
-                    <li>Our design is translated into comprehensive digital 
-                        environments built on latest development <br>standards.</li>
-                    </ul>
+                <div class="services__item">
+                    <img src="./src/icons/service-image-2.png" alt="services__image" class="services__image">
+                    <h2 class="services__title">DEVELOPMENT</h2>
+                    <span class="services__desc">Our design is translated into comprehensive digital 
+                    environments built on latest development standards.</span>
                 </div>
-            </section>
-        </main>
+                <div class="services__item">
+                    <img src="./src/icons/service-image-3.png" alt="services__image" class="services__image">
+                    <h2 class="services__title">SOFTWARE TESTING</h2>
+                    <span class="services__desc">Our design is translated into comprehensive digital 
+                    environments built on latest development standards.</span>
+                </div>
+            </div>
+        </div>
     </div>
-            <div class="background-2">
-             <div class="portfolio">Portfolio</div>
-             <section class="woman">
-                <img src="src/img/woman.svg" alt="woman">
-                <div class="woman-disc">Online fashion store - Homepage</div>
-             </section>
-             <section class="rebook">
-                <img src="src/img/reebok.svg" alt="rebook">
-                <div class="rebook-disc">Reebok Store - Concept</div>
-             </section>
-             <section class="braun">
-                <img src="src/img/braun.svg" alt="braun">
-                <div class="braun-disc">Braun Landing Page - Concept</div>
-             </section>
+    <div class="works" id="works">
+        <div class="works__inner container">
+            <div class="works__list">
+                <h2 class="works__title">Portfolio</h2>
+                <div class="works__item">
+                    <img src="./src/img/work-image-1.png" alt="works__image" class="works__image">
+                    <span class="works__desc">Online fashion store - Homepage</span>
+                </div>
+                <div class="works__item">
+                    <img src="./src/img/work-image-2.png" alt="works__image" class="works__image">
+                    <span class="works__desc">Reebok Store - Concept</span>
+                </div>
+                <div class="works__item">
+                    <img src="./src/img/work-image-3.png" alt="works__image" class="works__image">
+                    <span class="works__desc">Braun Landing Page - Concept</span>
+                </div>
             </div>
-        <footer>
-            <div class="contacts">Contacts</div>
-            <div class="question">Want to know more or just chat? 
-            <br>You are welcome!</div>
-            <div class="button">
-                <div class="button-color"><a href="#">Send message</a></div>
-                <img src="src/icons/chip bg.svg" alt="button" >
+        </div>
+    </div>
+    <footer class="footer" id="contact">
+        <div class="footer__inner container">
+            <div class="footer__content">
+                <h2 class="footer__title">Contacts</h2>
+                <span class="footer__desc">Want to know more or just chat? 
+                <br>You are welcome!</span>
+                <button class="button">Send message</button>
+                <div class="footer__socials">
+                    <a href="#" class="footer__social-item">
+                        <img src="./src/icons/socials-icon-1.png" alt="social__image" class="footer__social-image">
+                    </a>
+                    <a href="#" class="footer__social-item">
+                        <img src="./src/icons/socials-icon-2.png" alt="social__image" class="footer__social-image">
+                    </a>
+                    <a href="#" class="footer__social-item">
+                        <img src="./src/icons/socials-icon-3.png" alt="social__image" class="footer__social-image">
+                    </a>
+                    <a href="#" class="footer__social-item">
+                        <img src="./src/icons/socials-icon-4.png" alt="social__image" class="footer__social-image">
+                    </a>
+                </div>
+                    <p class="footer__quest">Like me on<br>
+                    LinkedIn, Instagram, Behance, Dribble</p>
+                </div>
             </div>
-            <div class="socials">
-                <img src="src/icons/socials.svg" alt="socials">
-            </div>
-            <div class="like">Like me on<br>
-            LinkedIn, Instagram, Behance, Dribble</div>
-         </footer> -->
+        </footer>
 </body>
 </html>
